@@ -1,0 +1,885 @@
+<html>
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paoay Church - VirtualPHeritages</title>
+    <link rel="shortcut icon" type="x-icon" href="images/logo.png">
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+
+        @font-face {
+            font-family: Medium-font;
+            src: url(fonts/Poppins-Medium.ttf);
+        }
+
+        @font-face {
+            font-family: Regular-font;
+            src: url(fonts/Poppins-Regular.ttf);
+        }
+
+        @font-face {
+            font-family: Title-font;
+            src: url(fonts/Poppins-ME.ttf);
+        }
+
+        .navbar-custom{
+            background-color: transparent;
+            transition: background-color 0.4s;
+        }
+        .navbar-custom.scrolled{
+            background-color: #001e3d;
+        }
+        .content-section{
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            padding: 0;
+        }
+        .content-content{
+            position: absolute;
+            z-index: 2;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+        .content-content h2{
+            font-size: 48px;
+            font-family: Arial Black;
+        }
+
+        .content-section video{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .content-overlay{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .banner-section{
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            padding: 0;
+        }
+
+        .banner-content{
+            position: absolute;
+            z-index: 2;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+        .banner-content h2{
+            font-size: 45px;
+            font-family: Arial Black;
+        }
+        .banner-section video{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .banner-overlay{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0) 70%);
+            z-index: 1;
+        }
+
+        .navbar-lower{
+            margin-bottom: 20px; 
+        }   
+        .navbar-upper, .navbar-lower{
+            background-color: transparent;
+        }
+
+        .navbar-upper .container, .navbar-lower .container{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar-upper img{
+            height: 50px;
+        }
+        .navbar-upper .partner-logos img{
+            height: 30px;
+            margin-left: 10px;
+        }
+
+        .navbar-lower .navbar-nav .nav-link {
+            color: #fff;
+            font-family: Regular-font;
+            font-size: 15px;
+        }
+
+        .navbar-lower .contact-us-btn{
+            background-color: transparent;
+            border: solid 2px white;
+            color: white;
+            font-family: Regular-font;
+            margin-right: 130px ;
+        }
+        .navbar-lower .social-icons a{
+            color: #fff;
+            margin-left: 10px;
+        }    
+        .navbar-nav .nav-link:hover{
+            color: #FFD700; ;
+        }
+        
+        .contact-us-btn:hover{
+            background-color: #ffffff; 
+            border-color: #ffffff; 
+            color: black;
+        }
+
+        .inquire-now-btn{
+            margin-top: 20px;
+            background-color: transparent; 
+            border-color: #ffffff; 
+            color: rgb(255, 255, 255);
+            font-family: Regular-font;
+        }
+
+        .inquire-now-btn:hover{
+            background-color: #ffffff; 
+            border-color: #ffffff; 
+            color: black;
+        }
+
+        .navbar-nav .nav-link{
+            font-size: 18px; 
+            margin-right: 20px;
+        }
+        
+        .social-icons a i {
+            font-size: 20px; 
+        }
+
+        .navbar-upper, .navbar-lower{
+            margin-top: 20px; 
+        }
+        
+
+        span .logotitle{
+            font: Arial Black;
+        }
+
+        @media (max-width: 575.98px){
+            .navbar-custom {
+                background-color: #001e3d; 
+            }
+        }
+
+        .social-icons .fa-facebook-f:hover{
+            color:rgb(51, 69, 168);
+        }
+
+        .social-icons .fa-youtube:hover{
+            color:red;
+        }
+
+        .social-icons .fa-instagram:hover{
+            color:rgb(230, 6, 118);
+        }
+
+        .custom-shape-divider-bottom-1716038433{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            transform: rotate(180deg);
+        }
+        
+        .custom-shape-divider-bottom-1716038433 svg{
+            position: relative;
+            display: block;
+            width: calc(300% + 1.3px);
+            height: 76px;
+        }
+
+        .custom-shape-divider-bottom-1716038433 .shape-fill{
+            fill: #FFFFFF;
+        }
+
+        .logo-title{
+            font-family: Medium-font; 
+            font-size: 25px;
+            font-weight: bold;
+            letter-spacing: 2px
+        }
+
+        .about-section{
+            padding: 50px 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .about-section .left-part,
+        .about-section .right-part{
+            flex: 1;
+            padding: 20px;
+        }
+        .about-section .left-part {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .about-section .right-part img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .about-title {
+            font-family: Medium-font;
+            font-size: 2rem;
+            font-weight: bold;
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .about-title::after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background: #0254ac; 
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+        }
+        .about-content {
+            font-size: 1.2rem;
+        }
+
+        p{
+            text-align: justify;
+            font-family: Regular-font;
+        }
+
+        .malapascua-img{
+            border-radius: 8px;
+        }
+
+        .malapascua-img:hover{
+            border-radius: 8px;
+            transform: scale(1.02); 
+            transition: transform 0.6s ease-in-out; 
+        }
+
+        .showbiztxt{
+            color:white;
+            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .text-custom:hover{
+            color: #007bff;
+            transition: color 0.3s ease;
+        }
+
+        .t2d-img{
+            border-radius: 5px;
+        }
+
+        .t2d-img:hover{
+            filter: brightness(60%);
+            transition: filter 0.3s ease;
+        }
+
+        .gallery:hover{
+            filter: brightness(60%);
+            transition: filter 0.3s ease;
+        }
+
+        .custom-shape-divider-top-1716048623 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+        
+        .custom-shape-divider-top-1716048623 svg {
+            position: relative;
+            display: block;
+            width: calc(300% + 1.3px);
+            height: 79px;
+        }
+
+        .custom-shape-divider-top-1716048623 .shape-fill {
+            fill: #FFFFFF
+        }
+
+        .fontdesign{
+            font-family: Regular-font;
+            font-size: 30px;
+            font-weight: bold;
+            position: relative;
+            margin-bottom: 20px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+        }
+        
+        .fontdesign::before,
+        .fontdesign::after {
+            content: "";
+            flex: 1;
+            border-bottom: 3px solid #007bff; 
+            margin: 0 10px; 
+        }
+
+        .offers-txt{
+            font: Medium-font;
+            font-size: 32px;
+            color:white;
+            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .img-scale:hover{
+            transform: scale(1.1); 
+            transition: transform 0.3s ease; 
+        }
+
+        .readmore-btn:hover {
+            background-color: #000000; 
+            border-color: #000000; 
+            color: rgb(255, 255, 255);
+        }
+        
+        .readmore-btn{
+            margin-top: 5px;
+            background-color: transparent; 
+            border-color: #000000; 
+            color: rgb(0, 0, 0);
+            font-family: Regular-font;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 400px;
+        }
+        
+        .scrollspy-container {
+            height: 400px;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .gmaps-logo{
+            width: 310px;
+            height: 60px;
+        }
+
+        .fixed-bg-section{
+            background-image: url('images/Facts-bg.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            padding: 100px 0;
+        }
+
+        .gallery-bg-section{
+            background: rgb(255,255,255);
+            background: linear-gradient(0deg, rgba(255,255,255,1) 37%, rgba(42,128,200,1) 87%);
+        }
+
+        body {
+        line-height: 1.5;
+        font-family: "Poppins", sans-serif;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        max-width: 1170px;
+        margin: auto;
+      }
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      ul {
+        list-style: none;
+      }
+      .footer {
+        background-color: #174677;
+        padding: 70px 0;
+      }
+      .footer-col {
+        width: 25%;
+        padding: 0 15px;
+      }
+      .footer-col h4 {
+        font-size: 18px;
+        font-family: Regular-font;
+        color: #ffffff;
+        text-transform: capitalize;
+        margin-bottom: 35px;
+        font-weight: 500;
+        position: relative;
+      }
+
+      .footer-col ul li:not(:last-child) {
+        margin-bottom: 10px;
+      }
+      .footer-col ul li a {
+        font-size: 16px;
+        font-family: Regular-font;
+        text-transform: capitalize;
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 300;
+        color: #bbbbbb;
+        display: block;
+      }
+      .footer-col ul li a:hover {
+        color: #ffffff;
+        padding-left: 8px;
+      }
+      .footer-col .social-links a {
+        padding-top: 10;
+
+        display: inline-block;
+        height: 40px;
+        width: 40px;
+        background-color: rgba(255, 255, 255, 0.2);
+        margin: 0 10px 10px 0;
+        text-align: center;
+        line-height: 40px;
+        border-radius: 50%;
+        color: #ffffff;
+      }
+
+      .footer-col .social-links a:hover {
+        color: #24262b;
+        background-color: #ffffff;
+      }
+
+      .divider-line {
+        width: 100%;
+        height: 1px;
+        background-color: #000000;  
+        margin: 30px 0;  
+       }
+
+      /*responsive*/
+      @media (max-width: 767px) {
+        .footer-col {
+          width: 50%;
+          margin-bottom: 30px;
+        }
+      }
+
+      @media (max-width: 574px) {
+        .footer-col {
+          width: 100%;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .logo-title {
+        font-size: 22px; 
+        }
+      }
+
+
+
+    </style>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+        <div class="container">
+            <div class="row w-100">
+                <div class="col-12 d-flex justify-content-between align-items-center navbar-upper py-2">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="d-flex align-items-center">
+                        <img src="images/logo.png" STYLE="width: 120px; height: 120px;">
+                        <span class="ms-2 text-white fs-4"><div class="logo-title">VirtualPHeritages</div></span>
+                    </div>
+                    <div class="partner-logos d-none d-lg-flex"> 
+                        <a href="https://www.tripadvisor.com"><img src="images/partnership2.png" class="img-scale"></a>
+                        <a href="https://www.airbnb.com/"><img src="images/brand-logo2.png" class="me-2 img-scale"></a>
+                    </div>
+                </div>
+     
+                <div class="col-12 navbar-lower">
+                    <div class="container">
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="Paoay.html"  style="color: #FFD700;">Paoay Church</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="CalleCrisologo.html">Calle Crisologo</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="">Bangui Windmills</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="">Bantay Church Bell Tower</a>
+                                </li>
+                            </ul>
+                            <div class="d-flex align-items-center">
+                                <div class="social-icons">
+                                    <a href="https://www.facebook.com/josephlouis.delacruz" class="me-2"><i class="fab fa-facebook-f"></i></a> 
+                                    <a href="" class="me-2"><i class="fab fa-instagram"></i></a> 
+                                    <a href=""><i class="fab fa-youtube"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+
+    <section class="banner-section">
+        <video autoplay muted loop>
+            <source src="videos/paoaybg.mp4" type="video/mp4">
+        </video>
+        <div class="banner-overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="banner-content text-center">
+                        <h2><br><br>DISCOVER THE HISTORICAL BEAUTY OF PAOAY CHURCH</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="custom-shape-divider-bottom-1716038433">
+                        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="about-section py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <img src="images/paoay-church.jpg" class="img-fluid malapascua-img">
+                </div>
+                <div class="col-md-6">
+                    <h2 class="about-title position-relative">Historical Facts</h2>
+                    <p class="about-content text-justify">
+                        Paoay Church, officially known as the <strong>San Agustin Church</strong>, is one of the most iconic historical landmarks in Ilocos Norte and a UNESCO World Heritage Site.
+                        Construction of the church <strong>in 1694</strong>  and was completed <strong>in 1710</strong> under the <strong>Augustinian friars</strong>. 
+                       
+                        <br><br>The church played a pivotal role in spreading Christianity in Northern Luzon and remains a center of faith for the local community. It is constructed from <strong>coral 
+                        stones, bricks, mortar made of sand</strong> and <strong>sugarcane juice</strong>, exemplifying local ingenuity and resourcefulness.
+                        
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="popular-section my-5">
+        <div class="container">
+            <h2 class="mb-4 about-title">Things to do</h2>
+            <div class="row">
+                <div class="col-md-3 mb-3">
+                    <div class="position-relative">
+                        <img src="images/Take Photos.png" class="img-fluid t2d-img">
+                        <span class="badge bg-primary position-absolute top-0 start-0 mt-2 ms-2 fs-6">Take Stunning Photos</span>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <div class="position-relative">
+                        <img src="images/Bell.png" class="img-fluid t2d-img">
+                        <span class="badge bg-success bg-gradient position-absolute top-0 start-0 mt-2 ms-2 fs-6">Visit the Bell Tower</span>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <div class="position-relative">
+                        <img src="images/Mass.png" class="img-fluid t2d-img">
+                        <span class="badge bg-danger position-absolute top-0 start-0 mt-2 ms-2 fs-6">Attend a Mass</span>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <div class="position-relative">
+                        <img src="images/Souvenirs.png" class="img-fluid t2d-img">
+                        <span class="badge bg-primary position-absolute top-0 start-0 mt-2 ms-2 fs-6">Buy Local Souvenirs</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section py-5">
+        <div class="container">
+
+            <div class="row align-items-center mb-5">
+                <div class="col-md-6">
+                    <h2 class="about-title position-relative">Cultural Information</h2>
+                    <p class="about-content text-justify">
+                        Paoay Church is more than a religious site; it is a cultural treasure that represents the Ilocano people's creativity and spirituality. 
+                        The Earthquake Baroque design reflects the fusion of <strong>architectural styles</strong> and <strong>local construction techniques</strong>. 
+                        The church is central to the religious life of the community, hosting masses, fiestas, and special events like weddings and baptisms. 
+                        During the Paoay Church Day in May, area becomes lively with processions, cultural performances, and traditional
+                        Ilocano food. The adjacent bell tower holds historical significance as it was <strong>used by Filipino revolutionaries to monitor Spanish and later American forces</strong>.
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <img src="images/interior.png" class="img-fluid malapascua-img">
+                </div>
+            </div>
+            <div class="divider-line"></div>
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <img src="images/tupig.png" class="img-fluid malapascua-img">
+                </div>
+              
+                <div class="col-md-6">
+                    <p class="about-content text-justify">
+                        <br>
+                        The surrounding area is also rich in culture, with vendors offering local delicacies like <strong>empanada</strong> and <strong>tupig,</strong>
+                        and artisans showcasing handwoven textiles and crafts. Visitors can find a deeper appreciation for Ilocano heritage 
+                        through the church’s symbolism of <strong>faith, resilience,</strong> and <strong>artistry</strong>. The preservation of the church emphasizes the
+                        community's commitment to safeguarding their heritage for future generations. Its grand architecture and serene surroundings make 
+                        it a site for reflection and admiration of cultural identity. 
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <section class="container my-5">
+        <h2 class="text-center mb-4 fontdesign" style="font-family: Medium-font; font-weight: bold;">Other Food Delicacies</h2>
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <div class="position-relative">
+                    <a href=""><img src="images/Pinakbet pizza.png" class="img-fluid t2d-img"></a>
+                    <h5 class="position-absolute text-custom bottom-0 start-0 px-2 py-1 offers-txt">Pinakbet Pizza</h5>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="position-relative">
+                    <a href=""><img src="images/Dinegdeng.png" class="img-fluid t2d-img"></a>
+                    <h5 class="position-absolute text-custom bottom-0 start-0 px-2 py-1 offers-txt">Dinengdeng</h5>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="position-relative">
+                    <a href=""><img src="images/Dinakdakan.png" class="img-fluid t2d-img"></a>
+                    <h5 class="position-absolute text-custom bottom-0 start-0 px-2 py-1 offers-txt">Dinakdakan</h5>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-fluid py-5 fixed-bg-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h4 class="mb-3" style="font-family: Regular-font;">Best Time to Visit Paoay Church</h4>
+                    <p style="text-align: justify; font-family: Regular-font;">
+                        The best time to visit Paoay Church is during the dry season (November to May) when the weather is pleasant for exploring. Early mornings or late afternoons are ideal for avoiding heat and capturing beautiful photos.
+                    </p>
+                    <hr>
+                    <h4 class="mt-4 mb-3" style="font-family: Regular-font;">Nearby Attractions</h4>
+                    <p style="text-align: justify; font-family: Regular-font;">
+                        Explore the nearby Paoay Sand Dunes for thrilling activities like 4x4 rides and sandboarding. Visit the Malacañang of the North for a glimpse into history, or relax by the serene Paoay Lake for scenic views and tranquility.
+                    </p>
+                    <hr>
+                    <h4 class="mt-4 mb-3" style="font-family: Regular-font;">Tips for Visitors</h4>
+                    <p style="text-align: justify; font-family: Regular-font;">
+                        Wear comfortable clothing and consider modest attire if you plan to enter the church. Don't forget to bring a camera to capture the intricate Baroque architecture. Local guides can enhance your visit with fascinating stories and historical details.
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <h4 class="mb-3" style="font-family: Regular-font;">Video Footage inside Paoay Church</h4>
+                    <div class="ratio ratio-16x9">
+                        <video autoplay muted loop>
+                            <source src="videos/inside.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <p class="mt-3">Paoay Church's timeless beauty and rich history await you! Watch this video to the end to marvel at its stunning Baroque architecture and fascinating details! – FIND MORE videos 
+                        <a href="https://www.youtube.com/watch?v=2CmzDumZcCc" style="color: rgb(0, 20, 202); text-decoration: underline;">HERE</a>.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+<div class="bg-black gallery-bg-section">
+    <section class="container py-5">
+        <h2 class="about-title position-relative" style="color:#FFFFFF"><i class="fa-solid fa-camera"></i>&nbsp;Gallery</h2>
+        <div class="row">
+            <div class="col-lg-12 mb-4">
+                <div class="row">
+                    <div class="col-lg-6 mb-3">
+                        <img src="images/P1.png" class="img-fluid gallery">
+                    </div>
+                    <div class="col-lg-6 mb-3">
+                        <img src="images/P2.png" class="img-fluid gallery">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-lg-4 mb-3">
+                        <img src="images/P3.png" class="img-fluid gallery">
+                    </div>
+                    <div class="col-lg-4 mb-3">
+                        <img src="images/P4.png" class="img-fluid gallery">
+                    </div>
+                    <div class="col-lg-4 mb-3">
+                        <img src="images/P5.png" class="img-fluid gallery">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> 
+</div>
+
+<section class="container mt-5" id="olympic-news">
+    <div class="divider-line"></div>
+    <h2 class="text-start mb-4 title-design"><img src="images/google map.png" class="gmaps-logo"></h2>
+    <div class="row">
+        <div class="col-md-6 mt-3">
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3793.211855880441!2d120.51886227518061!3d18.061744582945153!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x338ec7002092d5ad%3A0x3291d5a0f3164d60!2sPaoay%20Church!5e0!3m2!1sen!2sph!4v1732275164856!5m2!1sen!2sph" 
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <nav id="navbar-example3" class="navbar navbar-light ms-3">
+                <a class="navbar-brand" href="#" style="font-family: 'Arial', sans-serif; font-size: 24px; color: #000000; font-weight: bold; text-decoration: none; border-bottom: 2px solid #007bff;"><i class="fa-brands fa-youtube" style="color: #e22828;"></i>&nbsp; More Videos</a>
+            </nav>
+            
+            <div data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-offset="0" class="scrollspy-container" tabindex="0" style="height: 400px; overflow-y: auto; position: relative;">
+                <div id="item-1">
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/xuObMnZfVsM" title="YouTube video" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div id="item-2" class="mt-3">
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/DMPq2PIgTpg" title="YouTube video" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div id="item-3" class="mt-3">
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/1vHmA0eISbg" title="YouTube video" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div id="item-4" class="mt-3">
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/yUfQYZ-LVUc" title="YouTube video" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="spacer-section mt-4">
+
+</section>
+<section class="spacer-section mt-4">
+
+</section>
+
+<footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="footer-col">
+          <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;company</h4>
+          <a class="navbar-brand" href="#">
+            <img src="images/logo.png" alt="CNN Logo" width="150" />
+          </a>
+        </div>
+        <div class="footer-col">
+          <h4>&nbsp;&nbsp;&nbsp;&nbsp;About VirtualPHeritages</h4>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Sponsors</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Cookies</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>&nbsp;&nbsp;&nbsp;&nbsp;Navigation</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Paoay.html">Paoay Church</a></li>
+            <li><a href="CalleCrisologo.html">Calle Crisologo</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact us</h4>
+          <div class="social-links">
+            <a href="https://www.facebook.com/josephlouis.delacruz"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href=""
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href=""
+              ><i class="fab fa-youtube"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br/><br/>
+  </footer>
+
+
+    <script>
+        window.addEventListener('scroll', function() {
+            var navbar = document.querySelector('.navbar-custom');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } 
+            else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+    
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
+</body>
+
+</html>
